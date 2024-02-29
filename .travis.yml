@@ -1,6 +1,35 @@
 os: windows
 language: cpp
+  global:
+    # COVERITY_SCAN_TOKEN
+    # ** specific to your project **
+    - secure: "1gIkiNwwQ9mwQlZMbE4ylQ"
+addons:
+  coverity_scan:
+    # GitHub project metadata
+    # ** specific to your project **
+    project:
+      name: kayoch1n/coverity-trial
+      version: 1.0
+      description: coverity-trial
+
+    # Where email notification of build analysis results will be sent
+    notification_email: hanayolawk@gmail.com
+
+    # Commands to prepare for build_command
+    # ** likely specific to your build **
+    #build_command_prepend: ./configure
+
+    # The command that will be added as an argument to "cov-build" to compile your project for analysis,
+    # ** likely specific to your build **
+    build_command: mingw32-make windows64 
+
+    # Pattern to match selecting branches that will run analysis. We recommend leaving this set to 'coverity_scan'.
+    # Take care in resource usage, and consider the build frequency allowances per
+    #   https://scan.coverity.com/faq#frequency
+    branch_pattern: coverity_scan
 install:
   - choco install visualstudio2017buildtools 
 script:
-  - mingw32-make windows64
+  - if [ ${COVERITY_SCAN_BRANCH} != 1 ]; then mingw32-make windows64 ; fi
+  #- mingw32-make windows64
