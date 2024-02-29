@@ -30,6 +30,5 @@ addons:
     branch_pattern: coverity_scan
 install:
   - choco install visualstudio2017buildtools 
-script:
-  - if [ ${COVERITY_SCAN_BRANCH} != 1 ]; then mingw32-make windows64 ; fi
+script: if [ ${COVERITY_SCAN_BRANCH} != 1 ]; then mingw32-make windows64 ; fi
   #- mingw32-make windows64
