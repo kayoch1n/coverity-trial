@@ -6,4 +6,5 @@ install:
   - choco install visualstudio2017buildtools --package-parameters "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64"
 script:
   - export PATH=$MSBUILD_PATH:$PATH
-  - cl c_PRINTF_ARGS/main.cpp 
+  - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\VC\\Auxiliary\\Build\\vcvars32.bat"
+  - cl c_PRINTF_ARGS/main.cpp
