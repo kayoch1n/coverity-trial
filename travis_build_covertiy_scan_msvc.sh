@@ -11,7 +11,7 @@ echo -e "\033[33;1mNote: COVERITY_SCAN_PROJECT_NAME and COVERITY_SCAN_TOKEN are 
 [ -z "$COVERITY_SCAN_TOKEN" ] && echo "ERROR: COVERITY_SCAN_TOKEN must be set" && exit 1
 
 #PLATFORM=`uname`
-TOOL_ARCHIVE=/tmp/cov-analysis-cxx-win64.tgz
+TOOL_ARCHIVE=/tmp/cov-analysis-cxx-win64.zip
 TOOL_URL=https://scan.coverity.com/download/cxx/win64
 TOOL_BASE=/tmp/coverity-scan-analysis
 UPLOAD_URL="https://scan.coverity.com/builds"
@@ -59,7 +59,8 @@ if [ ! -d $TOOL_BASE ]; then
   echo -e "\033[33;1mExtracting Coverity Scan Analysis Tool...\033[0m"
   mkdir -p $TOOL_BASE
   pushd $TOOL_BASE
-  tar xzf $TOOL_ARCHIVE
+  #tar xddzf $TOOL_ARCHIVE
+  unzip -q $TOOL_ARCHIVE
   popd
 fi
 
