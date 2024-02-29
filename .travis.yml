@@ -12,6 +12,7 @@ addons:
     notification_email: hanayolawk@gmail.com
     build_command: mingw32-make windows64
     branch_pattern: coverity_scan
+    build_script_url: https://raw.githubusercontent.com/kayoch1n/coverity-trial/coverity_scan/travis_build_covertiy_scan_msvc.sh
 install:
 - choco install visualstudio2017buildtools
 script: if [ ${COVERITY_SCAN_BRANCH} != 1 ]; then mingw32-make windows64 ; fi
