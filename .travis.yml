@@ -1,5 +1,6 @@
 os: windows
 language: cpp
+env:
   global:
     # COVERITY_SCAN_TOKEN
     # ** specific to your project **
