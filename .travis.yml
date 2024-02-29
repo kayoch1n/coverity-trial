@@ -1,10 +1,6 @@
 os: windows
 language: cpp
-env:
-  - MSBUILD_PATH="C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\Current\Bin"
 install:
-  - choco install visualstudio2017buildtools --package-parameters "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64"
+  - choco install visualstudio2017buildtools 
 script:
-  - export PATH=$MSBUILD_PATH:$PATH
-  - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\VC\\Auxiliary\\Build\\vcvars32.bat"
-  - cl c_PRINTF_ARGS/main.cpp
+  - mingw32-make windows64
