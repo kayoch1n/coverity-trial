@@ -4,7 +4,7 @@ env:
   global:
     # COVERITY_SCAN_TOKEN
     # ** specific to your project **
-    - secure: "1gIkiNwwQ9mwQlZMbE4ylQ"
+    - secure: ""
 addons:
   coverity_scan:
     # GitHub project metadata
