@@ -11,7 +11,7 @@ addons:
       description: coverity-trial
     notification_email: hanayolawk@gmail.com
     build_command: mingw32-make windows64
-    branch_pattern: main 
+    branch_pattern: main
 install:
 - choco install visualstudio2017buildtools
 script: if [ ${COVERITY_SCAN_BRANCH} != 1 ]; then mingw32-make windows64 ; fi
